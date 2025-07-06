@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Yuza - The Chatterbox Supreme!</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="confetti-container"></div>
+    <audio id="background-music" src="Grief and Sorrow.mp3" loop autoplay></audio>
+    <button id="play-music-button" class="glowing-button music-button">PLAY MUSIC!</button>
+
+    <div class="container">
+        <div class="content">
+            <h1 class="glowing-text anime-title">🎉 Happy Birthday Yuza – The Chatterbox Supreme! 🎉</h1>
+
+            <p class="glowing-text message">
+                They say silence is golden... <br>
+                But you, my friend, are platinum-level noise. 💬💣 <br>
+                Your words come faster than Wi-Fi in a hacker’s den, <br>
+                And yet, somehow, we still love listening to your never-ending TED Talks about absolutely nothing. 😂
+            </p>
+
+            <p class="glowing-text message">
+                Today isn’t just about your birth – it’s about the moment the universe said, <br>
+                “Let’s create someone who never shuts up, but somehow makes the world better by doing it.” <br>
+                And guess what? It worked. <br>
+                You're chaotic, you're hilarious, you're loud... and you're legendary.
+            </p>
+
+            <p class="glowing-text message">
+                This little webpage is my way of saying: <br>
+                Thanks for being you – unfiltered, unmuted, and unforgettable. <br>
+                So blow out the candles (after a 10-minute speech), <br>
+                Eat the cake (preferably without narrating it), <br>
+                And just enjoy your day like the queen of noise that you are.
+            </p>
+
+            <p class="glowing-text message signature">
+                Much love (and earplugs), <br>
+                Zayeem 👨‍💻
+            </p>
+
+            <div class="anime-gallery">
+                <img src= naruto.gif alt="Naruto GIF" class="anime-gif glowing-border">
+                <img src= demonslater.gif alt="Demon Slayer GIF" class="anime-gif glowing-border">
+                <img src= chainsawman.gif alt="Chainsaw Man GIF" class="anime-gif glowing-border">
+                <img src= dragonball.gif alt="Dragon Ball GIF" class="anime-gif glowing-border">
+            </div>
+
+            <button class="power-up-button glowing-button" onclick="powerUp()">POWER-UP!</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('background-music');
+            audio.volume = 0.3; // Set a comfortable volume
+            audio.play().catch(e => console.error("Audio play prevented:", e));
+
+            // Confetti animation
+            function createConfetti() {
+                const confetti = document.createElement('div');
+                confetti.classList.add('confetti');
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.animationDuration = Math.random() * 3 + 2 + 's';
+                confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 70%)`;
+                document.querySelector('.confetti-container').appendChild(confetti);
+
+                confetti.addEventListener('animationend', () => {
+                    confetti.remove();
+                });
+            }
+
+            setInterval(createConfetti, 100); // Create confetti frequently
+
+            // Optional: Power-up button effect
+            window.powerUp = function() {
+                const button = document.querySelector('.power-up-button');
+                button.textContent = 'POWERED UP!';
+                button.style.backgroundColor = '#00ff00';
+                button.style.boxShadow = '0 0 20px #00ff00, 0 0 40px #00ff00';
+                setTimeout(() => {
+                    button.textContent = 'POWER-UP!';
+                    button.style.backgroundColor = '#8a2be2';
+                    button.style.boxShadow = '0 0 10px #8a2be2, 0 0 20px #8a2be2';
+                }, 1000);
+
+                // Add a temporary, more intense confetti burst
+                for (let i = 0; i < 50; i++) {
+                    createConfetti();
+                }
+            };
+        });
+    </script>
+    <p>&copy; All Rights Reserved Under Zayeem Akbar. (Party Loonga Warna Terey pe Copyright Strike aajayega aur paise dene padenge)
+</p>
+    <script src="script.js"></script>
+    
+</body>
+</html>
